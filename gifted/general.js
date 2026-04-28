@@ -435,7 +435,7 @@ gmd(
         { key: "tools", title: "𝚃𝙾𝙾𝙻𝚂", icon: "❀" },
         { key: "uploader", title: "𝚄𝙋𝙇𝙊𝘼𝘿𝙀𝚁", icon: "❀" },
         { key: "utility", title: "𝚄𝚃𝙄𝙇𝙄𝚃𝚈", icon: "❀" },
-        { key: "religion", title: "𝚁𝙴𝙻𝙸𝙂𝙸𝙾𝙽", icon: "❀" },
+        { key: "religion", title: "𝚁𝙴𝙻𝙸𝙂𝙸𝙾𝚄𝚂 𝙱𝙾𝙾𝙺𝚂", icon: "❀" },
       ];
 
       const categorySections = categoryConfig
