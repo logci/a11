@@ -1,20 +1,5 @@
 
 
-  <!-- Decorative lines -->
-  <line x1="80" y1="120" x2="290" y2="120" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4">
-    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3s" repeatCount="indefinite"/>
-  </line>
-  <line x1="510" y1="120" x2="720" y2="120" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4">
-    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3s" repeatCount="indefinite"/>
-  </line>
-
-  <!-- Corner decorations -->
-  <text x="25"  y="45"  font-size="18" fill="#ffd200" opacity="0.5">✦</text>
-  <text x="755" y="45"  font-size="18" fill="#ffd200" opacity="0.5">✦</text>
-  <text x="25"  y="180" font-size="18" fill="#ff6ec4" opacity="0.5">✦</text>
-  <text x="755" y="180" font-size="18" fill="#ff6ec4" opacity="0.5">✦</text>
-</svg>
-
 
 <div align="center">
 
