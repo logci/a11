@@ -46,6 +46,110 @@ const formatCommandList = (commandList, botPrefix) =>
 
 gmd(
   {
+    pattern: "prank",
+    react: "🪄",
+    category: "general",
+    description: "Run a fake hacking sequence for fun",
+  },
+  async (from, Gifted, conText) => {
+    const { mek, react } = conText;
+    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    await Gifted.sendMessage(
+      from,
+      {
+        text: "💻 Initializing hack sequence...",
+      },
+      { quoted: mek },
+    );
+    await wait(1500);
+
+    await Gifted.sendMessage(
+      from,
+      {
+        text: "🔌 Establishing secure connection to the server...",
+      },
+      { quoted: mek },
+    );
+    await wait(1500);
+
+    await Gifted.sendMessage(
+      from,
+      {
+        text: "🛡 Bypassing firewalls and security protocols...\nBypassing firewalls: [█████░░░░░░░░░░░░░░░]\nBypassing firewalls: [██████████░░░░░░░░░░]\nBypassing firewalls: [███████████████░░░░░]\nBypassing firewalls: [████████████████████]",
+      },
+      { quoted: mek },
+    );
+    await wait(2000);
+
+    await Gifted.sendMessage(
+      from,
+      {
+        text: "🔐 Gaining access to encrypted database...",
+      },
+      { quoted: mek },
+    );
+    await wait(2000);
+
+    await Gifted.sendMessage(
+      from,
+      {
+        text: "🔑 Cracking encryption keys...\nCracking encryption: [███░░░░░░░░░░░░░░░░░]\nCracking encryption: [██████░░░░░░░░░░░░░░]\nCracking encryption: [█████████░░░░░░░░░░░]\nCracking encryption: [████████████░░░░░░░░]\nCracking encryption: [████████████████░░░░]\nCracking encryption: [████████████████████]",
+      },
+      { quoted: mek },
+    );
+    await wait(2000);
+
+    await Gifted.sendMessage(
+      from,
+      {
+        text: "📥 Downloading sensitive data from server...\nDownloading files: [████░░░░░░░░░░░░░░░░]\nDownloading files: [████████░░░░░░░░░░░░]\nDownloading files: [████████████░░░░░░░░]\nDownloading files: [████████████████░░░░]\nDownloading files: [████████████████████]",
+      },
+      { quoted: mek },
+    );
+    await wait(2500);
+
+    await Gifted.sendMessage(
+      from,
+      {
+        text: "🔒 Planting a backdoor for future access...",
+      },
+      { quoted: mek },
+    );
+    await wait(1000);
+
+    await Gifted.sendMessage(
+      from,
+      {
+        text: '💥 Hack complete! 🎯 Target "target" successfully compromised.',
+      },
+      { quoted: mek },
+    );
+    await wait(1000);
+
+    await Gifted.sendMessage(
+      from,
+      {
+        text: "🤖 Mission accomplished. Logging off...",
+      },
+      { quoted: mek },
+    );
+    await wait(2000);
+
+    await Gifted.sendMessage(
+      from,
+      {
+        text: "*HACKED BY AASHIF-MD 🪄*",
+      },
+      { quoted: mek },
+    );
+
+    await react("✅");
+  },
+);
+
+gmd(
+  {
     pattern: "ping",
     aliases: ["pi", "p"],
     react: "⚡",
