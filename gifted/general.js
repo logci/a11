@@ -8,6 +8,87 @@ const { gmd, commands, monospace, formatBytes } = require("../gift"),
   ram = `${formatBytes(freeMemoryBytes)}/${formatBytes(totalMemoryBytes)}`;
 const { sendButtons } = require("gifted-btns");
 
+const { generateWAMessage, proto } = require("gifted-baileys");
+
+
+gmd(
+  {
+    pattern: "intro",
+    fromMe: true,
+    react: "🦋",
+    description: "Shows My Intro",
+    category: "general",
+  },
+  async (from, Gifted, conText) => {
+    const { mek, gmdBuffer, pushName, botName } = conText;
+    const image = "https://i.ibb.co/5Xjj5sxz/tourl-1777040577237.jpg";
+    const logo = "https://i.ibb.co/5Xjj5sxz/tourl-1777040577237.jpg";
+
+    try {
+      const thumb = await gmdBuffer(image);
+      const thumbnail = await gmdBuffer(logo);
+      const number = Gifted?.user?.id || "0@s.whatsapp.net";
+
+      const generatedMessage = await generateWAMessage(
+        from,
+        {
+          text: `0ཻུ۪۪ꦽꦼ̷⸙‹•══════════════♡᭄
+│       *「 𝗠𝗬 𝗜𝗡𝗧𝗥𝗢 」*
+│ *Name      :* AS
+│ *Place       :* china 🇨🇳
+│ *Gender   :* 1x
+│ *Age          :* 1x
+│ *Phone     :* @
+│ *IG ID        :* none
+│ *Protfolio   :* NONE
+│ *Status     :* married
+╰═════ꪶ ཻུ۪۪ꦽꦼ̷⸙ ━ ━ ━ ━ ꪶ ཻུ۪۪ꦽꦼ̷⸙`,
+        },
+        { quoted: mek.quoted || mek },
+      );
+
+      const options = {
+        contextInfo: {
+          forwardingScore: 999,
+          isForwarded: false,
+        },
+        linkPreview: {
+          renderLargerThumbnail: true,
+          showAdAttribution: true,
+          title: "𝞓",
+          body: "ᴄʟɪᴄᴋ ʜᴇʀᴇ 🦋 !!",
+          mediaType: 1,
+          thumbnail: thumb,
+          sourceUrl: "http://wa.me/?text=_៚ʜᴇʟʟᴏ+🪄_",
+        },
+        quoted: {
+          key: {
+            fromMe: false,
+            participant: "0@s.whatsapp.net",
+            remoteJid: "status@broadcast",
+          },
+          message: {
+            contactMessage: {
+              displayName: `${pushName || botName || "User"}`,
+              vcard: `BEGIN:VCARD\nVERSION:3.0\nN:XL;${botName || "Bot"},;;;\nFN:${botName || "Bot"},\nitem1.TEL;waid=${number.split("@")[0]}:${number.split("@")[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
+              jpegThumbnail: thumbnail,
+            },
+          },
+        },
+      };
+
+      await Gifted.forwardMessage(
+        from,
+        proto.WebMessageInfo.fromObject(generatedMessage),
+        options,
+      );
+    } catch (error) {
+      return Gifted.sendMessage(from, { text: `Intro failed: ${error.message}` }, { quoted: mek });
+    }
+  },
+);
+
+
 const getVisibleCommands = () =>
   commands.filter(
     (command) => command.pattern && !command.dontAddCommandList && !command.on,
