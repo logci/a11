@@ -8,7 +8,7 @@ const { gmd, commands, monospace, formatBytes } = require("../gift"),
   ram = `${formatBytes(freeMemoryBytes)}/${formatBytes(totalMemoryBytes)}`;
 const { sendButtons } = require("gifted-btns");
 
-const { generateWAMessage, proto } = require("gifted-baileys");
+const { generateWAMessage } = require("gifted-baileys");
 
 
 gmd(
@@ -77,11 +77,14 @@ gmd(
         },
       };
 
-      await Gifted.forwardMessage(
-        from,
-        proto.WebMessageInfo.fromObject(generatedMessage),
-        options,
-      );
+      generatedMessage.message.extendedTextMessage.contextInfo = {
+        ...(generatedMessage.message.extendedTextMessage.contextInfo || {}),
+        ...(options.contextInfo || {}),
+      };
+
+      await Gifted.relayMessage(from, generatedMessage.message, {
+        messageId: generatedMessage.key.id,
+      });
     } catch (error) {
       return Gifted.sendMessage(from, { text: `Intro failed: ${error.message}` }, { quoted: mek });
     }
