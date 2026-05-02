@@ -157,8 +157,31 @@ gmd(
     await Gifted.sendMessage(
       from,
       {
-        text: "🛡 Bypassing firewalls and security protocols...\nBypassing firewalls: [█████░░░░░░░░░░░░░░░]\nBypassing firewalls: [██████████░░░░░░░░░░]\nBypassing firewalls: [███████████████░░░░░]\nBypassing firewalls: [████████████████████]",
+        text: "🛡 Bypassing firewalls and security protocols...",
       },
+      { quoted: mek },
+    );
+    await Gifted.sendMessage(
+      from,
+      {
+        text: "Bypassing firewalls: [█████░░░░░░░░░░░░░░░]",
+      },
+      { quoted: mek },
+    );
+    await wait(1000);
+    await Gifted.sendMessage(from, { text: "Bypassing firewalls:" }, { quoted: mek });
+    await wait(1000);
+    await Gifted.sendMessage(from, { text: "[██████████░░░░░░░░░░]" }, { quoted: mek });
+    await wait(1000);
+    await Gifted.sendMessage(
+      from,
+      { text: "Bypassing firewalls: [███████████████░░░░░]" },
+      { quoted: mek },
+    );
+    await wait(1000);
+    await Gifted.sendMessage(
+      from,
+      { text: "Bypassing firewalls: [████████████████████]" },
       { quoted: mek },
     );
     await wait(2000);
@@ -172,20 +195,58 @@ gmd(
     );
     await wait(2000);
 
+    await Gifted.sendMessage(from, { text: "🔑 Cracking encryption keys..." }, { quoted: mek });
     await Gifted.sendMessage(
       from,
-      {
-        text: "🔑 Cracking encryption keys...\nCracking encryption: [███░░░░░░░░░░░░░░░░░]\nCracking encryption: [██████░░░░░░░░░░░░░░]\nCracking encryption: [█████████░░░░░░░░░░░]\nCracking encryption: [████████████░░░░░░░░]\nCracking encryption: [████████████████░░░░]\nCracking encryption: [████████████████████]",
-      },
+      { text: "Cracking encryption: [███░░░░░░░░░░░░░░░░░]" },
+      { quoted: mek },
+    );
+    await wait(1000);
+    await Gifted.sendMessage(
+      from,
+      { text: "Cracking encryption: [██████░░░░░░░░░░░░░░]" },
+      { quoted: mek },
+    );
+    await wait(1000);
+    await Gifted.sendMessage(
+      from,
+      { text: "Cracking encryption: [█████████░░░░░░░░░░░]" },
+      { quoted: mek },
+    );
+    await Gifted.sendMessage(from, { text: "Cracking encryption:" }, { quoted: mek });
+    await wait(1000);
+    await Gifted.sendMessage(from, { text: "[████████████░░░░░░░░]" }, { quoted: mek });
+    await Gifted.sendMessage(from, { text: "Cracking encryption:" }, { quoted: mek });
+    await wait(1000);
+    await Gifted.sendMessage(from, { text: "[████████████████░░░░]" }, { quoted: mek });
+    await wait(1000);
+    await Gifted.sendMessage(
+      from,
+      { text: "Cracking encryption: [████████████████████]" },
       { quoted: mek },
     );
     await wait(2000);
 
     await Gifted.sendMessage(
       from,
-      {
-        text: "📥 Downloading sensitive data from server...\nDownloading files: [████░░░░░░░░░░░░░░░░]\nDownloading files: [████████░░░░░░░░░░░░]\nDownloading files: [████████████░░░░░░░░]\nDownloading files: [████████████████░░░░]\nDownloading files: [████████████████████]",
-      },
+      { text: "📥 Downloading sensitive data from server..." },
+      { quoted: mek },
+    );
+    await Gifted.sendMessage(from, { text: "Downloading files:" }, { quoted: mek });
+    await wait(1000);
+    await Gifted.sendMessage(from, { text: "[████░░░░░░░░░░░░░░░░]" }, { quoted: mek });
+    await Gifted.sendMessage(from, { text: "Downloading files:" }, { quoted: mek });
+    await wait(1000);
+    await Gifted.sendMessage(from, { text: "[████████░░░░░░░░░░░░]" }, { quoted: mek });
+    await Gifted.sendMessage(from, { text: "Downloading files:" }, { quoted: mek });
+    await wait(1000);
+    await Gifted.sendMessage(from, { text: "[████████████░░░░░░░░]" }, { quoted: mek });
+    await Gifted.sendMessage(from, { text: "Downloading files:" }, { quoted: mek });
+    await wait(1000);
+    await Gifted.sendMessage(from, { text: "[████████████████░░░░]" }, { quoted: mek });
+    await Gifted.sendMessage(
+      from,
+      { text: "Downloading files:\n\n[████████████████████]" },
       { quoted: mek },
     );
     await wait(2500);
@@ -215,12 +276,12 @@ gmd(
       },
       { quoted: mek },
     );
-    await wait(2000);
+    await wait(1000);
 
     await Gifted.sendMessage(
       from,
       {
-        text: "*HACKED BY AASHIF-MD 🪄*",
+        text: "*HACKED BY AASHIF MD*",
       },
       { quoted: mek },
     );
